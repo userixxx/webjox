@@ -1,5 +1,3 @@
-<!-- settings.blade.php -->
-
 @extends('layouts.app')
 
 @section('title')Управление постами@endsection
@@ -10,7 +8,6 @@
         <div class="post-add">
             <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data" class="form">
                 @csrf
-                <!-- Ваши существующие поля формы -->
                 <div class="mb-3">
                     <label for="title" class="form-label">Название поста:</label>
                     <input type="text" name="title" class="form-control" id="title" placeholder="Название поста">
@@ -21,8 +18,13 @@
                 </div>
                 <div class="mb-3">
                     <label for="category" class="form-label">Категория:</label>
-                    <input type="text" name="category" class="form-control" id="category" placeholder="Категория">
+                    <select name="category" class="form-control" id="category">
+                        <option value="1">Общие</option>
+                        <option value="2">Личное</option>
+                        <option value="3">Новости</option>
+                    </select>
                 </div>
+
                 <div class="mb-3">
                     <label for="image" class="form-label">Изображение:</label>
                     <input type="file" name="image" class="form-control" id="image" accept="image/*">
