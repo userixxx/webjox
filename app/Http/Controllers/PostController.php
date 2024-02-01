@@ -2,15 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $posts = Post::all();
-        return view('pages.posts', compact('posts'));
+        $categories = Category::all();
+        $selectedCategory = $request->input('category');
+
+        $posts = Post::when($selectedCategory, function ($query, $selectedCategory) {
+            return $query->where('category', $selectedCategory);
+        })->get();
+
+        return view('pages.posts', compact('posts', 'categories'));
     }
     public function store(Request $request)
     {
