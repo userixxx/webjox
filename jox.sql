@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 01, 2024 at 01:51 AM
+-- Generation Time: Feb 01, 2024 at 11:34 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -117,7 +117,8 @@ CREATE TABLE `posts` (
 
 INSERT INTO `posts` (`id`, `title`, `content`, `category`, `image_id`, `visibility`, `image`, `created_at`, `updated_at`) VALUES
 (1, 'Первый пост', 'описание описание описание описание описание описание описание описание  описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание', '1', NULL, 1, 'images/posts/jWc0rkMAg4i0WT7QBzgBWZoj2tqgRpuhKlkjFgdR.png', '2024-01-31 22:01:50', '2024-01-31 22:01:50'),
-(3, 'Новости ростова-на-дону', 'описание описание описание описание описание описание описание описание  описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание', '1', NULL, 1, 'images/posts/EGpbUavLbKPuxq6qumpbkcXP0TMSgLbWYlwg5edc.png', '2024-01-31 22:07:13', '2024-01-31 22:07:13');
+(3, 'Новости ростова-на-дону', 'описание описание описание описание описание описание описание описание  описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание', '1', NULL, 1, 'images/posts/EGpbUavLbKPuxq6qumpbkcXP0TMSgLbWYlwg5edc.png', '2024-01-31 22:07:13', '2024-01-31 22:07:13'),
+(4, 'андрей лох', 'согласен', 'чушпаны', NULL, 1, 'images/posts/VAK6hp65DA0I3XaoLxMBPhNzvjuFFMJLWmGbIIDn.png', '2024-02-01 08:39:59', '2024-02-01 08:39:59');
 
 -- --------------------------------------------------------
 
@@ -142,7 +143,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `admin_level`) VALUES
-(1, 'userix userix', 'huislona@mail.ru', NULL, '$2y$12$i.gBuu4MzVVP55ZQJxdnxuC.Ss6w7ymnfe6B2K6.juqEnkLc5V3ZK', NULL, '2024-01-31 21:55:10', '2024-01-31 21:55:10', 2);
+(1, 'userix userix', 'test@mail.ru', NULL, '$2y$12$i.gBuu4MzVVP55ZQJxdnxuC.Ss6w7ymnfe6B2K6.juqEnkLc5V3ZK', NULL, '2024-01-31 21:55:10', '2024-01-31 21:55:10', 0),
+(2, 'Всеволод', 'admin@mail.ru', NULL, '$2y$12$Bo/xrRKw1XoYX25WocWsRubv5jw9UB5sDT3hFknwDAAwJPabOw9Ku', NULL, '2024-02-01 20:34:18', '2024-02-01 20:34:18', 2);
 
 --
 -- Indexes for dumped tables
@@ -214,13 +216,13 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
