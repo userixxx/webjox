@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 01, 2024 at 11:34 PM
+-- Generation Time: Feb 01, 2024 at 11:54 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -20,6 +20,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `jox`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `categories`
+--
+
+CREATE TABLE `categories` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`id`, `created_at`, `updated_at`) VALUES
+(1, NULL, NULL),
+(2, NULL, NULL),
+(3, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -60,7 +81,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (11, '2019_12_14_000001_create_personal_access_tokens_table', 1),
 (12, '2024_01_31_222618_add_admin_level_to_users', 1),
 (13, '2024_01_31_232726_create_posts_table', 2),
-(14, '2024_01_31_233037_add_image_to_posts_table', 2);
+(14, '2024_01_31_233037_add_image_to_posts_table', 2),
+(15, '2024_02_01_233838_create_categories_table', 3);
 
 -- --------------------------------------------------------
 
@@ -118,7 +140,8 @@ CREATE TABLE `posts` (
 INSERT INTO `posts` (`id`, `title`, `content`, `category`, `image_id`, `visibility`, `image`, `created_at`, `updated_at`) VALUES
 (1, 'Первый пост', 'описание описание описание описание описание описание описание описание  описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание', '1', NULL, 1, 'images/posts/jWc0rkMAg4i0WT7QBzgBWZoj2tqgRpuhKlkjFgdR.png', '2024-01-31 22:01:50', '2024-01-31 22:01:50'),
 (3, 'Новости ростова-на-дону', 'описание описание описание описание описание описание описание описание  описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание', '1', NULL, 1, 'images/posts/EGpbUavLbKPuxq6qumpbkcXP0TMSgLbWYlwg5edc.png', '2024-01-31 22:07:13', '2024-01-31 22:07:13'),
-(4, 'андрей лох', 'согласен', 'чушпаны', NULL, 1, 'images/posts/VAK6hp65DA0I3XaoLxMBPhNzvjuFFMJLWmGbIIDn.png', '2024-02-01 08:39:59', '2024-02-01 08:39:59');
+(4, 'андрей ', 'согласен', '2', NULL, 1, 'images/posts/VAK6hp65DA0I3XaoLxMBPhNzvjuFFMJLWmGbIIDn.png', '2024-02-01 08:39:59', '2024-02-01 08:39:59'),
+(5, 'тестовый пост', 'ну получается так', '3', NULL, 1, NULL, '2024-02-01 20:43:59', '2024-02-01 20:43:59');
 
 -- --------------------------------------------------------
 
@@ -149,6 +172,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `failed_jobs`
@@ -195,6 +224,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -204,7 +239,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -216,7 +251,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
